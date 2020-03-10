@@ -1,0 +1,6 @@
+{% if product.description is not empty %}
+    {{ ('app.entity.product.product.' ~ product.color)|trans }}<br/><br/>
+    {{ product.description | nl2br }}
+{% else %}
+    {{ 'sylius.ui.no_description'|trans }}.
+{% endif %}
