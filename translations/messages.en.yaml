@@ -1,0 +1,10 @@
+app:
+    form:
+        product:
+            color: Color
+    entity:
+        product:
+            product:
+                0: Red
+                1: Blue
+                2: Green
