@@ -8,14 +8,31 @@ use Doctrine\ORM\Mapping as ORM;
 use Sylius\Component\Core\Model\Product as BaseProduct;
 use Sylius\Component\Product\Model\ProductTranslationInterface;
 
-/**
- * @ORM\Entity
- * @ORM\Table(name="sylius_product")
- */
 class Product extends BaseProduct
 {
+    public const PRODUCT_COLORS = [
+        'red',
+        'blue',
+        'green',
+    ];
+
+    /**
+     * @var int
+     */
+    protected $color;
+
     protected function createTranslation(): ProductTranslationInterface
     {
         return new ProductTranslation();
+    }
+
+    public function getColor()
+    {
+        return $this->color;
+    }
+
+    public function setColor(int $color): void
+    {
+        $this->color = $color;
     }
 }
